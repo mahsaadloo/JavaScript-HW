@@ -1,0 +1,26 @@
+@import url('./bootstrap.css');
+@import url('./_reset.css');
+
+.nums{
+    border: .2rem solid darkred;
+    border-radius: 2rem;
+    background-color: white;
+}
+
+button[name="btn-btn"]{
+    border: .2rem solid rgb(85, 0, 42);
+    border-radius: 1rem;
+    background-color: rgb(239, 241, 72);
+    color: rgb(85, 0, 42);
+    padding: .5rem 2rem;
+}
+
+.sum-sec{
+    border: .2rem solid darkred;
+    border-radius: 2rem;
+    padding: 1rem 1rem;
+    width: 20rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+}
