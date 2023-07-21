@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>calculator</title>
+</head>
+<body>
+    <main class="d-flex justify-content-center">
+        <section class="border-calc">
+            <p>Insert numbers :</p>
+            <div class="d-flex gap-4">
+                <input class="form-control form-control-sm input-num" type="number" id="input1">
+                <input class="form-control form-control-sm input-num" type="number" id="input2">
+            </div>
+            <div class="d-flex gap-5 justify-content-center mt-5">
+                <button class="btn-num" onclick="calcu('add')"> + </button>
+                <button class="btn-num" onclick="calcu('sub')"> - </button>
+                <button class="btn-num" onclick="calcu('multi')"> * </button>
+                <button class="btn-num" onclick="calcu('divi')"> / </button>
+            </div>
+            <div class="result-input d-flex justify-content-center" id="result"></div>
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>

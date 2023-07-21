@@ -1,0 +1,32 @@
+@import url('./_reset.css');
+@import url('./bootstrap.css');
+
+.border-calc{
+    border: 1rem solid red;
+    margin-top: 10rem;
+    padding: 2rem 5rem;
+}
+
+.input-num{
+    border: none;
+    border-bottom: .2rem solid red;
+}
+
+.btn-num{
+    border: none;
+    border-bottom: .2rem solid red;
+    border-right: .1rem solid red;
+    border-bottom-right-radius: 1rem;
+    padding-right: 1rem;
+    background-color: white;
+    color: red;
+    font-size:5rem;
+}
+
+.result-input{
+    width: 30rem;
+    border: none;
+    border-bottom: .2rem solid red;
+    margin-top: 10rem;
+    font-size: 2rem;
+}
