@@ -1,7 +1,7 @@
 function findtext() {
     let sentences = prompt("Enter your sentences please: ");
     let findword = prompt("What are you looking for?");
-    if (!sentences) {
+    if (!sentences || !findword) {
         return console.log(" something is wrong ! please try again !");
     }
     else{
