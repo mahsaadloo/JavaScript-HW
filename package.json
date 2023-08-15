@@ -1,0 +1,11 @@
+{
+  "name": "js-7",
+  "version": "1.0.0",
+  "description": "js-7 with typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "start typescript"
+  },
+  "author": "mahsa adloo",
+  "license": "ISC"
+}

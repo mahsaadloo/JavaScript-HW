@@ -1,0 +1,3 @@
+# UserList by Typescript
+
+In this project we start with typescript and write a list of users include name, lastName, gender, maritalStatus, age and etc. and detemine these items. We use push() method to add more user in uselist[] and with findIndex() method we find id of specific user and update it. For delete items we use filter() method with finding specific id and then delete it from our array. Or we can use splice() method to find the index of specific item(id of it) and then delete which id we want. At last we sort objects in alphabet with method sort(). In this method we compare names two by two.
