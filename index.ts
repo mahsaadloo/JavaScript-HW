@@ -1,15 +1,22 @@
 type dailyTask = {
-    id: number,
+    id: string,
     title: string,
     description: string
 };
 
-type tasks = Array<dailyTask>; // or dailyTask[]
+type tasksListType = Array<dailyTask>; // or dailyTask[]
+
+const tasksList : tasksListType = [];
 
 const titleInput = document.querySelector<HTMLInputElement>("#title");
 const descriptionInput = document.querySelector<HTMLInputElement>("#description");
 
 const submitButton = document.querySelector<HTMLButtonElement>("#addButton");
 submitButton?.addEventListener("click", ()=> {
-    console.log(titleInput?.value);
-})
+    const newTask : dailyTask = {
+        id: crypto.randomUUID(),
+        title: titleInput?.value ?? '',
+        description: descriptionInput?.value ?? ''
+    };
+    tasksList.push(newTask);
+});
