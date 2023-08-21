@@ -21,7 +21,20 @@ submitButton?.addEventListener("click", ()=> {
         description: descriptionInput?.value ?? ''
     };
     tasksList.push(newTask);
-    
+
+    const listItem = document.createElement("li");
+    listItem.className = "py-4 px-3 bg-slate-100 rounded-lg mb-3";
+    const titleElement = document.createElement("h2");
+    titleElement.innerText = newTask.title;
+    titleElement.className = "text-slate-700";
+    const descriptionElement = document.createElement("p");
+    descriptionElement.innerText = newTask.description;
+    descriptionElement.className = "text-slate-500";
+
+    listItem.appendChild(titleElement);
+    listItem.appendChild(descriptionElement);
+
+    showTaskList?.appendChild(listItem);
 });
 
 const taskListDrawer = document.querySelector<HTMLButtonElement>("#taskListDrawer");
