@@ -1,6 +1,8 @@
-import {contactTypes} from "./types";
+import {contactInfoType, contactTypes} from "./types";
 import {showContact,userName,phoneNumber,device,drawerList} from "./importer.js";
 import {contactList} from "./state.js";
+import{createListItem} from "./function.js";
+import{validateFields} from "./function.js";
 
 export const showDrawerHandler = ()=>{
     showContact?.classList.remove("bottom-[-100%]");
@@ -10,7 +12,18 @@ export const closeDrawerHandler = ()=> {
     showContact?.classList.remove("bottom-[0%]")
     showContact?.classList.add("bottom-[-100%]");
 };
+
+const validateCreateContact = (contactInfo: contactInfoType) => {
+    if (!validateFields(contactInfo.username , contactInfo.phonenumber)){
+        alert(" Fill all Fields ");
+        throw Error(" Fill all Fields ");
+    };
+};
+
 export const submitButtonHandler = () => {
+
+    validateCreateContact({username: userName!.value , phonenumber: phoneNumber!.value});
+
     const newContact:contactTypes = {
         id: crypto.randomUUID(),
         username: userName?.value ?? "",
@@ -19,17 +32,10 @@ export const submitButtonHandler = () => {
         storage: device?.checked ? "device" : "SIM"
     };
     contactList.push(newContact);
-    // HTML tags:
-    const listItem = document.createElement("li");
-    listItem.className = "py-4 px-3 bg-red-100 rounded-lg mb-3";
-    const userNameElement = document.createElement("h2");
-    userNameElement.className = "text-red-800";
-    userNameElement.innerText = newContact.username;
-    const phoneNumberElement = document.createElement("p");
-    phoneNumberElement.className = "text-slate-600";
-    phoneNumberElement.innerText = newContact.phonenumber;
 
-    listItem.appendChild(userNameElement);
-    listItem.appendChild(phoneNumberElement);
+    const listItem = createListItem({
+        username: newContact.username,
+        phonenumber: newContact.phonenumber
+    });
     drawerList?.appendChild(listItem);
 };

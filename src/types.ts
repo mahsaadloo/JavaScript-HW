@@ -6,3 +6,7 @@ export type contactTypes = {
     storage: "SIM" | "device"
 };
 export type contactListType = contactTypes[];
+export type contactInfoType = {
+    username: string,
+    phonenumber: string
+};
